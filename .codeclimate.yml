@@ -1,0 +1,26 @@
+engines:
+  bundler-audit:
+    enabled: true
+  csslint:
+    enabled: false
+  coffeelint:
+    enabled: true
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  scss-lint:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.erb"
+  - "**.rb"
+  - "**.coffee"
+  - "gulp-tasks/**/*.js"
+  - "gulpfile.js"
+  - "**.scss"
+exclude_paths:
+- config/
+- polyfills/
+- src/style/vendor/
