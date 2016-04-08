@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="guclinkAuth" class="wf-loading">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="guclink,link,iot,campus,german university in cairo">
+  <meta name="google" content="notranslate">
+  <title data-ng-bind="($title || 'GUC Link')"></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CMaterial+Icons&amp;subset=latin" media="all">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75912438-1', 'auto');
+</script>
+</head>
+<body>
+  <header id="main-header">
+    <button
+    data-click-toggle="nav-visible" data-click-toggle-target="body"
+    class="nav-trigger"><span></span></button>
+  </header>
+  <div data-ui-view class="wrapper" id="main-view"></div>
+  <div data-ng-include="'partials/nav.html'"></div>
+  <footer><a
+  analytics-on="click"
+  analytics-event="gh-repo"
+  target="_blank" href="https://github.com/ah450/guclink-auth-www"><img src="images/GitHub-Mark-64px.png"></a></footer>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
