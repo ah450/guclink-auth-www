@@ -27,9 +27,18 @@
     "angular-ui-router-title": "^0.0.4",
     "angular-messages": "^1.5.3",
     "angular-animate": "^1.5.3",
-    "angular-cookies": "^1.5.3"
+    "angular-cookies": "^1.5.3",
+    "guclink-constants": "ah450/guclink-constants",
+    "guclink-satellizer-decorator": "ah450/guclink-satellizer-decorator",
+    "moment": "^2.12.0",
+    "moment-timezone": "^0.5.3",
+    "angular-resource": "^1.5.3",
+    "guclink-www-shims": "ah450/guclink-www-shims",
+    "guclink-auth-angular-modules": "ah450/guclink-auth-angular-modules"
   },
   "devDependencies": {
-    "angular-mocks": "^1.5.3"
+    "angular-mocks": "^1.5.3",
+    "guclink-constants": "ah450/guclink-constants#dev",
+    "guclink-satellizer-decorator": "ah450/guclink-satellizer-decorator#dev"
   }
 }

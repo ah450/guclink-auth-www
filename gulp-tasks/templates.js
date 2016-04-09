@@ -6,7 +6,8 @@ var minifyHtml = require('gulp-htmlmin');
 function createModule(src) {
   return src.pipe(templateCache('templates.js', {
       standalone: true,
-      module: 'guclinkAuthTemplates'
+      module: 'guclinkAuthTemplates',
+      root: 'auth/'
     }));
 }
 

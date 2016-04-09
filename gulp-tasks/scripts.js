@@ -32,7 +32,14 @@ function processDeps() {
       .pipe(order([
         'libs/jquery/**/*.js',
         'libs/angular/*.js',
+        'libs/lodash/**/*.js',
+        'libs/guclink-www-shims/**/*.js',
+        'libs/moment/**/*.js',
+        'libs/moment-timezone/**/*.js',
+        'libs/angular-cookies/**/*.js',
         'libs/satellizer/*.js',
+        'libs/guclink-constants/**/*.js',
+        'libs/guclink-satellizer-decorator/**/*.js',
         'libs/**/*.js',
         ], { base: './'}));
   var modernizrSrc = gulp.src('src/modernize.coffee')
