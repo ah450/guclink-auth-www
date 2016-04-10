@@ -72,6 +72,7 @@ angular.module 'guclinkAuth'
       resolve:
         $title: ->
           'Resend Verification'
+    
     welcomeState =
       name: 'public.welcome'
       url: '/welcome'

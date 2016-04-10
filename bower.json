@@ -34,7 +34,8 @@
     "moment-timezone": "^0.5.3",
     "angular-resource": "^1.5.3",
     "guclink-www-shims": "ah450/guclink-www-shims",
-    "guclink-auth-angular-modules": "ah450/guclink-auth-angular-modules"
+    "guclink-auth-angular-modules": "ah450/guclink-auth-angular-modules",
+    "guclink-www-common": "ah450/guclink-www-common"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.3",

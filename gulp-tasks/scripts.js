@@ -40,6 +40,7 @@ function processDeps() {
         'libs/satellizer/*.js',
         'libs/guclink-constants/**/*.js',
         'libs/guclink-satellizer-decorator/**/*.js',
+        'libs/guclink-www-common/**/*.js',
         'libs/**/*.js',
         ], { base: './'}));
   var modernizrSrc = gulp.src('src/modernize.coffee')

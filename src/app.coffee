@@ -1,7 +1,7 @@
 angular.module 'guclinkAuth', ['ui.router', 'ui.router.title',
   'guclinkAuthTemplates', 'satellizer', 'ngCookies', 'ngAnimate',
   'angulartics', 'angulartics.google.analytics', 'ngMaterial', 'ngMessages',
-  'guclinkAuthModules', 'guclinkConstants'
+  'guclinkAuthModules', 'guclinkConstants', 'guclinkCommon'
   ]
 
 
