@@ -41,7 +41,7 @@ namespace :deploy do
   task :install_node_modules do
     on roles(:web) do
       within release_path do
-        execute :npm, 'install', '-g'
+        execute :npm, 'install'
       end
     end
   end
