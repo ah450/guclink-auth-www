@@ -14,6 +14,9 @@ describe 'LoginController', ->
     .respond({
       default_token_exp: 30
       })
+  afterEach inject (_UserAuth_) ->
+    _UserAuth_.logout()
+
   it 'sets processing to true when submitting', ->
     $scope = {}
     controller = $controller 'LoginController', {$scope: $scope}
