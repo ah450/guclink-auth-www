@@ -6,12 +6,13 @@ angular.module 'guclinkAuth'
     $scope.processing = false
     $scope.submit = ->
       return if $scope.processing
+      $scope.processing = true
       if $scope.userData.remember
         $scope.userData.expiration = 168
       UserAuth.login $scope.userData, $scope.userData.expiration
         .then ->
           if redirect.empty
-            $state.go 'private.account'
+            $state.go 'private.profile'
           else
             dest = redirect.pop()
             if dest.external

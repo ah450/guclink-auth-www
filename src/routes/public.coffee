@@ -8,7 +8,7 @@ angular.module 'guclinkAuth'
         authRule: (userAuth) ->
           if userAuth.signedIn
             {
-              to: 'private.account'
+              to: 'private.profile'
               params: {}
               allowed: false
             }
@@ -72,7 +72,7 @@ angular.module 'guclinkAuth'
       resolve:
         $title: ->
           'Resend Verification'
-    
+
     welcomeState =
       name: 'public.welcome'
       url: '/welcome'
