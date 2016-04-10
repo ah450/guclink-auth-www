@@ -8,6 +8,7 @@ GUCLINK AUTH
 
 ![codeship](https://codeship.com/projects/776e5370-dfe3-0133-892d-0e99657653d8/status?branch=master)
 
+[![Test Coverage](https://codeclimate.com/github/ah450/guclink-auth-www/badges/coverage.svg)](https://codeclimate.com/github/ah450/guclink-auth-www/coverage)
 
 
 

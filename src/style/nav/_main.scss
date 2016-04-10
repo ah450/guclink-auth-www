@@ -91,7 +91,7 @@
     &::after {
       content: '';
       position: absolute;
-      background: $md-clr-blue;
+      background: darken($md-clr-blue-500, 40%);
       height: .25em;
       top: -.1em;
       width: 50%;
@@ -121,7 +121,7 @@
     left: 0;
     height: .25em;
     width: 100%;
-    background: $md-clr-blue;
+    background: darken($md-clr-blue-500, 40%);
     transition: all .5s $snap;
     border-radius: 9px;
   }
