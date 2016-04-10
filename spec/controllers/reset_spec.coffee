@@ -17,7 +17,8 @@ describe 'ResetController', ->
     $httpBackend.when('GET', 'http://localhost:3000/api/configurations.json')
     .respond({
       default_token_exp: 30,
-      pass_reset_resend_delay: 120
+      pass_reset_resend_delay: 120,
+      pass_reset_expiration: 240
       })
 
   it 'sets processing to true when submitting', ->
@@ -68,8 +69,8 @@ describe 'ResetController', ->
     $httpBackend.flush()
     $httpBackend.verifyNoOutstandingExpectation()
     $httpBackend.verifyNoOutstandingRequest()
-    expect($scope.error).to.eql("Can only reset once every " +
-      "2 minutes")
+    expect($scope.error).to.eql("Token only valid for " +
+      "4 minutes")
     expect($scope.processing).to.be.false
 
   it 'transitions to internal error for any other error', ->

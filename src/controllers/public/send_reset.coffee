@@ -27,7 +27,7 @@ angular.module 'guclinkAuth'
               authConfigurations.then (config) ->
                 $scope.processing = false
                 $scope.error =
-                  "Must wait #{config.pass_reset_expiration / 60}" +
+                  "Must wait #{config.pass_reset_resend_delay / 60}" +
                   " minutes between requests"
             else if response.status is 422
               $scope.processing = false

@@ -27,8 +27,8 @@ angular.module 'guclinkAuth'
             $scope.error = response.data.message
           else if response.status is 420
             authConfigurations.then (config) ->
-              $scope.error = "Can only reset once every " +
-                "#{config.pass_reset_resend_delay / 60} minutes"
+              $scope.error = "Token only valid for " +
+                "#{config.pass_reset_expiration / 60} minutes"
               $scope.processing = false
           else
             $state.go 'public.internal_error'
