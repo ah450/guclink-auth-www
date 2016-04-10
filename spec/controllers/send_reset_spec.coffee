@@ -74,15 +74,15 @@ describe 'SendResetController', ->
     expect($scope.processing).to.be.false
     expect($scope.error).to.eql('wtf')
 
-    it 'transitions to internal error state on other errors', ->
-      $httpBackend.when('GET', url)
-        .respond 500
-      $scope = {}
-      controller = $controller 'SendResetController', {$scope: $scope}
-      $scope.userData.email = email
-      $scope.confirm()
-      $httpBackend.flush()
-      $httpBackend.verifyNoOutstandingExpectation()
-      $httpBackend.verifyNoOutstandingRequest()
-      $rootScope.$apply()
-      expect($state.current.name).to.eql('public.internal_error')
+  it 'transitions to internal error state on other errors', ->
+    $httpBackend.when('GET', url)
+      .respond 500
+    $scope = {}
+    controller = $controller 'SendResetController', {$scope: $scope}
+    $scope.userData.email = email
+    $scope.confirm()
+    $httpBackend.flush()
+    $httpBackend.verifyNoOutstandingExpectation()
+    $httpBackend.verifyNoOutstandingRequest()
+    $rootScope.$apply()
+    expect($state.current.name).to.eql('public.internal_error')
