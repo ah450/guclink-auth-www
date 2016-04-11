@@ -80,7 +80,7 @@ var options = minimist(process.argv.slice(2), {
 gulp.task('production-helper', ['create-dirs', 'bower'], function() {
   var cssStream = css.minifyCss(css.processSass());
   var scriptStream = scripts.processScripts().pipe(ngAnnotate()).pipe(uglify());
-  var dependenciesStream = scripts.processDeps().pipe(uglify());
+  var dependenciesStream = scripts.processDeps().pipe(ngAnnotate()).pipe(uglify());
   var routesStream = scripts.processRoutes().pipe(uglify({mangle: false}));
   var templatesStream = templates.minifyTemplates();
   var assetsStream = assets.processAssets();
@@ -112,7 +112,7 @@ gulp.task('server', ['build'], function() {
     livereload: true,
     root: 'build',
     port: 8000,
-    https: true
+    https: false
   });
 });
 

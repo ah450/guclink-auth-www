@@ -35,7 +35,9 @@
     "angular-resource": "^1.5.3",
     "guclink-www-shims": "ah450/guclink-www-shims",
     "guclink-auth-angular-modules": "ah450/guclink-auth-angular-modules",
-    "guclink-www-common": "ah450/guclink-www-common"
+    "guclink-www-common": "ah450/guclink-www-common",
+    "ng-click-toggle": "ah450/ng-click-toggle",
+    "ng-click-remove": "ah450/ng-click-remove"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.3",
