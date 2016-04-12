@@ -20,8 +20,10 @@ angular.module 'guclinkAuth'
     loginState =
       name: 'public.login'
       url: '/login'
-      templateUrl: 'auth/public/login.html'
-      controller: 'LoginController'
+      views:
+        "@":
+          templateUrl: 'auth/public/login.html'
+          controller: 'LoginController'
       resolve:
         $title: ->
           'GUCLINK| Login'
@@ -29,8 +31,10 @@ angular.module 'guclinkAuth'
     signupState =
       name: 'public.signup'
       url: '/signup'
-      templateUrl: 'auth/public/signup.html'
-      controller: 'SignupController'
+      views:
+        "@":
+          templateUrl: 'auth/public/signup.html'
+          controller: 'SignupController'
       resolve:
         $title: ->
           'GUCLINK| Signup'
@@ -38,8 +42,10 @@ angular.module 'guclinkAuth'
     verifyAccount =
       name: 'public.verify'
       url: '/verify/:id?token'
-      templateUrl: 'auth/generic/wait_message.html'
-      controller: 'VerifyController'
+      views:
+        "@":
+          templateUrl: 'auth/generic/wait_message.html'
+          controller: 'VerifyController'
       resolve:
         $title: ->
           'Confirm Email'
@@ -48,8 +54,10 @@ angular.module 'guclinkAuth'
     resetPass =
       name: 'public.reset'
       url: '/reset/:id?token'
-      templateUrl: 'auth/public/reset.html'
-      controller: 'ResetController'
+      views:
+        "@":
+          templateUrl: 'auth/public/reset.html'
+          controller: 'ResetController'
       resolve:
         $title: ->
           'Confirm Reset'
@@ -58,8 +66,10 @@ angular.module 'guclinkAuth'
     sendReset =
       name: 'public.reset_send'
       url: '/resetpass'
-      templateUrl: 'auth/public/reset_send.html'
-      controller: 'SendResetController'
+      views:
+        "@":
+          templateUrl: 'auth/public/reset_send.html'
+          controller: 'SendResetController'
       resolve:
         $title: ->
           'Reset Password'
@@ -67,8 +77,10 @@ angular.module 'guclinkAuth'
     sendVerification =
       name: 'public.verify_send'
       url: '/reverify'
-      templateUrl: 'auth/public/verify_send.html'
-      controller: 'SendVerifyController'
+      views:
+        "@":
+          templateUrl: 'auth/public/verify_send.html'
+          controller: 'SendVerifyController'
       resolve:
         $title: ->
           'Resend Verification'
@@ -76,12 +88,16 @@ angular.module 'guclinkAuth'
     welcomeState =
       name: 'public.welcome'
       url: '/welcome'
-      templateUrl: 'auth/public/welcome.html'
+      views:
+        "@":
+          templateUrl: 'auth/public/welcome.html'
 
     internalErrorState =
       name: 'public.internal_error'
       url: '/oops'
-      templateUrl: 'auth/public/internal_error.html'
+      views:
+        "@":
+          templateUrl: 'auth/public/internal_error.html'
       resolve:
         $title: ->
           'Oopsy'

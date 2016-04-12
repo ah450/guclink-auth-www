@@ -21,7 +21,9 @@ angular.module 'guclinkAuth'
     internalErrorState =
       name: 'private.internal_error'
       url: '/ooops'
-      templateUrl: 'auth/public/internal_error.html'
+      views:
+        "@":
+          templateUrl: 'auth/public/internal_error.html'
       resolve:
         $title: ->
           'Oopsy'
@@ -29,8 +31,10 @@ angular.module 'guclinkAuth'
     profileState =
       name: 'private.profile'
       url: '/profile'
-      templateUrl: 'auth/private/profile.html'
-      controller: 'ProfileController'
+      views:
+        "@":
+          templateUrl: 'auth/private/profile.html'
+          controller: 'ProfileController'
       resolve:
         $title: ->
           'GUCLINK| Profile'
