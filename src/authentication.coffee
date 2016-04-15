@@ -31,6 +31,14 @@ angular.module 'guclinkAuth'
       UserAuth.logout()
       $state.go 'public.login'
 
+# Transition on logout event
+angular.module 'guclinkAuth'
+  .run ($rootScope, $state) ->
+    $rootScope.$on 'logout', ->
+      $state.go 'public.login'
+
+
+
 # HTTP Interceptor for 401s (expired)
 angular.module 'guclinkAuth'
   .config ($httpProvider) ->

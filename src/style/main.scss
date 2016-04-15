@@ -74,6 +74,12 @@ footer {
   min-height: 60vh;
 }
 
+.logout-wrapper {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
 
 @import 'utility/main';
 @import 'animations/main';
