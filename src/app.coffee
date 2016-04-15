@@ -7,6 +7,16 @@ angular.module 'guclinkAuth', ['ui.router', 'ui.router.title',
 
 
 angular.module 'guclinkAuth'
+  .config ($mdIconProvider) ->
+    $mdIconProvider.fontSet 'md', 'material-icons'
+
+angular.module 'guclinkAuth'
+  .config ($mdThemingProvider) ->
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('pink')
+
+angular.module 'guclinkAuth'
   .config ($compileProvider) ->
     $compileProvider.debugInfoEnabled false
 
@@ -14,7 +24,7 @@ angular.module 'guclinkAuth'
   .config ($cookiesProvider) ->
     $cookiesProvider.defaults =
       path: '/'
-      domain: 'guclink.in'
+      domain: '.guclink.in'
       secure: true
 
 angular.module 'guclinkAuth'

@@ -44,8 +44,8 @@ a.link {
 
 .wrapper {
   margin: 0 auto;
-  padding-top: 5vh;
-  min-height: calc(100vh - 5vh);
+  padding-top: 10vh;
+  min-height: calc(100vh - 10vh);
   max-width: 80vw;
   @include media("width>=875px") {
     max-width: 75vw;

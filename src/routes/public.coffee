@@ -4,6 +4,7 @@ angular.module 'guclinkAuth'
       name: 'public'
       url: ''
       abstract: true
+      templateUrl: 'auth/public/root.html'
       data:
         authRule: (userAuth) ->
           if userAuth.signedIn
@@ -21,7 +22,7 @@ angular.module 'guclinkAuth'
       name: 'public.login'
       url: '/login'
       views:
-        "@":
+        "":
           templateUrl: 'auth/public/login.html'
           controller: 'LoginController'
       resolve:
@@ -32,7 +33,7 @@ angular.module 'guclinkAuth'
       name: 'public.signup'
       url: '/signup'
       views:
-        "@":
+        "":
           templateUrl: 'auth/public/signup.html'
           controller: 'SignupController'
       resolve:
@@ -43,7 +44,7 @@ angular.module 'guclinkAuth'
       name: 'public.verify'
       url: '/verify/:id?token'
       views:
-        "@":
+        "":
           templateUrl: 'auth/generic/wait_message.html'
           controller: 'VerifyController'
       resolve:
@@ -55,7 +56,7 @@ angular.module 'guclinkAuth'
       name: 'public.reset'
       url: '/reset/:id?token'
       views:
-        "@":
+        "":
           templateUrl: 'auth/public/reset.html'
           controller: 'ResetController'
       resolve:
@@ -67,7 +68,7 @@ angular.module 'guclinkAuth'
       name: 'public.reset_send'
       url: '/resetpass'
       views:
-        "@":
+        "":
           templateUrl: 'auth/public/reset_send.html'
           controller: 'SendResetController'
       resolve:
@@ -78,7 +79,7 @@ angular.module 'guclinkAuth'
       name: 'public.verify_send'
       url: '/reverify'
       views:
-        "@":
+        "":
           templateUrl: 'auth/public/verify_send.html'
           controller: 'SendVerifyController'
       resolve:
@@ -89,14 +90,14 @@ angular.module 'guclinkAuth'
       name: 'public.welcome'
       url: '/welcome'
       views:
-        "@":
+        "":
           templateUrl: 'auth/public/welcome.html'
 
     internalErrorState =
       name: 'public.internal_error'
       url: '/oops'
       views:
-        "@":
+        "":
           templateUrl: 'auth/public/internal_error.html'
       resolve:
         $title: ->
