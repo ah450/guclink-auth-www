@@ -22,7 +22,7 @@ var gulpInstall = require('gulp-install');
 gulp.task('bower-install', function() {
   // Runs bower install --production
   return gulp.src('bower.json')
-    .pipe(gulpInstall({production: true}));
+    .pipe(gulpInstall({production: true, allowRoot: true}));
 });
 
 gulp.task('bower-install-dev',  function() {
