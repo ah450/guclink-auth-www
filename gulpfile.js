@@ -17,21 +17,32 @@ var templates = require('./gulp-tasks/templates');
 var scripts = require('./gulp-tasks/scripts');
 var rimraf = require('rimraf');
 var watch = require('gulp-watch');
+var gulpInstall = require('gulp-install');
 
 gulp.task('bower-install', function() {
-  // Runs bower install
+  // Runs bower install --production
+  return gulp.src('bower.json')
+    .pipe(gulpInstall({production: true}));
+});
+
+gulp.task('bower-install-dev',  function() {
   return bower()
     .pipe(gulp.dest('./bower_components'));
 });
 
-gulp.task('bower', ['bower-install', 'create-dirs'], function() {
+gulp.task('bower-local', ['bower-install-dev'], function() {
+  return gulp.src(mainBowerFiles({includeDev: false}), {base: 'bower_components'})
+    .pipe(gulp.dest('libs'));
+});
+
+gulp.task('bower-production', ['bower-install', 'create-dirs'], function() {
   // moves main files to lib folder
-  return gulp.src(mainBowerFiles(), {base: 'bower_components'})
+  return gulp.src(mainBowerFiles({includeDev: false}), {base: 'bower_components'})
     .pipe(gulp.dest('libs'));
 });
 
 
-gulp.task('bower-dev', ['bower-install', 'create-dirs'], function() {
+gulp.task('bower-dev', ['bower-install-dev', 'create-dirs'], function() {
   // moves main files to lib folder
   return gulp.src(mainBowerFiles({
     includeDev: 'inclusive'
@@ -57,7 +68,7 @@ gulp.task('create-dirs', function() {
 
 gulp.task('default', ['build']);
 
-gulp.task('build', ['create-dirs', 'bower'], function() {
+gulp.task('build', ['create-dirs', 'bower-local'], function() {
     var cssStream = css.processSass();
     var scriptStream = scripts.processScripts();
     var dependenciesStream = scripts.processDeps();
@@ -77,7 +88,7 @@ var options = minimist(process.argv.slice(2), {
   default: {dest: 'dist'}
 })
 
-gulp.task('production-helper', ['create-dirs', 'bower'], function() {
+gulp.task('production-helper', ['create-dirs', 'bower-production'], function() {
   var cssStream = css.minifyCss(css.processSass());
   var scriptStream = scripts.processScripts().pipe(ngAnnotate()).pipe(uglify());
   var dependenciesStream = scripts.processDeps().pipe(ngAnnotate()).pipe(uglify());
